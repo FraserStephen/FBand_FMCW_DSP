@@ -34,11 +34,11 @@ void LED_Init(void)
     GPIO_Initure.Mode=GPIO_MODE_OUTPUT_PP;  		    //推挽输出
     GPIO_Initure.Pull=GPIO_PULLUP;         			    //上拉
     GPIO_Initure.Speed=GPIO_SPEED_FREQ_VERY_HIGH;  	//高速
-    HAL_GPIO_Init(GPIOA,&GPIO_Initure);     	     	//初始化PA0
+    HAL_GPIO_Init(GPIOA,&GPIO_Initure);     	     	//初始化PA2
 	   
 	  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_1,GPIO_PIN_SET);	//PA1置1
 		HAL_GPIO_WritePin(GPIOA,GPIO_PIN_0,GPIO_PIN_SET);	//PA0置1
-		HAL_GPIO_WritePin(GPIOA,GPIO_PIN_0,GPIO_PIN_RESET);	//PA2置0 (Fire) 
+		HAL_GPIO_WritePin(GPIOA,GPIO_PIN_2,GPIO_PIN_RESET);	//PA2置0 (Fire) 
 
 }
 

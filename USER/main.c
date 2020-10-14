@@ -53,7 +53,12 @@ int main(void)
 		Get_DMAValue(signal);
 		FFT(signal, freq);
 		Fire = CFAR(freq);
-		if(Fire){}
+		if(Fire){
+			Fire_On;
+		}
+		else {
+			Fire_Clear;
+		}
 		Fire = 0;
 		PA0Toggle;
 		//delay_ms(10);

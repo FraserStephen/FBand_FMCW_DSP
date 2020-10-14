@@ -16,15 +16,13 @@
 #define LED2(n)		   (n?HAL_GPIO_WritePin(GPIOA,GPIO_PIN_1,GPIO_PIN_SET):HAL_GPIO_WritePin(GPIOA,GPIO_PIN_1,GPIO_PIN_RESET))
 #define LED2_Toggle (HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_1))                                    //LED1输出电平翻转
 #define PA0Toggle (HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_0))                                    //PA0输出电平翻转
-#define Fire_On  	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_1,GPIO_PIN_SET)
+#define Fire_On  	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_2,GPIO_PIN_SET)
+#define Fire_Clear HAL_GPIO_WritePin(GPIOA,GPIO_PIN_2,GPIO_PIN_RESET)
 
 void LED_Init(void); //LED初始化函数
 
 
 #endif
-
-
-
 
 
 //STM32H7工程模板-HAL库函数版本
