@@ -21,8 +21,11 @@ uint32_t DMA1Flag = 0;
 
 int32_t dsize = 512; //If you modify dsize, the same as line 19 , line 102 and line 112
 //dsize must euqal to FFT_N*2
-uint16_t ADCxValues0[FFT_N]; // Buffer0, must equal to dsize
-uint16_t ADCxValues1[FFT_N]; // Buffer1
+
+__align(16) uint16_t ADCxValues0[FFT_N] __attribute__((at(0x38000000))); 
+__align(16) uint16_t ADCxValues1[FFT_N] __attribute__((at(0x38000240))); 
+//uint16_t ADCxValues0[FFT_N]; // Buffer0, must equal to dsize
+//uint16_t ADCxValues1[FFT_N]; // Buffer1
 
 
 //********************************************************************************/
@@ -81,7 +84,7 @@ void MPU_Config(void){
     MPU_InitStruct.Size             = MPU_REGION_SIZE_64KB;    
     MPU_InitStruct.AccessPermission = MPU_REGION_FULL_ACCESS;
     MPU_InitStruct.IsBufferable     = MPU_ACCESS_NOT_BUFFERABLE;
-    MPU_InitStruct.IsCacheable      = MPU_ACCESS_CACHEABLE;
+    MPU_InitStruct.IsCacheable      = MPU_ACCESS_NOT_CACHEABLE;
     MPU_InitStruct.IsShareable      = MPU_ACCESS_NOT_SHAREABLE;
     MPU_InitStruct.Number           = MPU_REGION_NUMBER2;
     MPU_InitStruct.TypeExtField     = MPU_TEX_LEVEL0;

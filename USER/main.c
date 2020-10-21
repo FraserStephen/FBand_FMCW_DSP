@@ -27,8 +27,9 @@
 	struct compx signal[FFT_N]; //size euqal to dsize/2 and FFT_N
 	float freq[FFT_N];
 	extern uint32_t DMA1Flag;
+	extern uint16_t Fire;
 	
-	int Fire = 0;
+
 	
 int main(void)
 {
@@ -39,7 +40,7 @@ int main(void)
 
 	//uart_init(115200);						//´®¿Ú³õÊ¼»¯
 	
-	GPIO_Init();
+	GPIO_Init(); 	
 	LED_Init();
 
 
@@ -50,16 +51,16 @@ int main(void)
   
 	while(1)
 	{
+		Fire = 0;
 		Get_DMAValue(signal);
 		FFT(signal, freq);
-		Fire = CFAR(freq);
+		CFAR(freq);
 		if(Fire){
 			Fire_On;
 		}
 		else {
 			Fire_Clear;
 		}
-		Fire = 0;
 		PA0Toggle;
 		//delay_ms(10);
 	}
