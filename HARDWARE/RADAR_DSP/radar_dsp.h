@@ -17,8 +17,12 @@
 #define L_slipper        (R+1)
 #define L_num            (FFT_N - L_slipper + 1) //L_num = floor((M-L_slipper)/L_move)+1;
 #define T                5  //T = P_fa^(-1/R)-1  P_fa = 1e-4
-#define Up_Range         25     //Up_Range < FFT_N - Half_R
-#define Down_Range       14     //Down_Range > Half_R
+#define Up_Range         85     //Up_Range < FFT_N - Half_R
+#define Down_Range       75     //Down_Range > Half_R
+
+#define Fire_Hold        5
+#define Sample_Number    10
+
 
 
 struct compx {float real, imag;};
@@ -38,9 +42,6 @@ int CFAR(float * s);
 /********************************************************************************/
 //ADC สตั้ 
 /******************************************************************************/
-
-
-
 
 
 

@@ -154,18 +154,18 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>59</LineNumber>
+          <LineNumber>78</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134225276</Address>
+          <Address>135271764</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>.\main.c</Filename>
+          <Filename>.\stm32h7xx_it.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\ADC\main.c\59</Expression>
+          <Expression>\\ADC\stm32h7xx_it.c\78</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
@@ -187,99 +187,109 @@
         <Ww>
           <count>3</count>
           <WinNumber>1</WinNumber>
-          <ItemText>ADCxValues0</ItemText>
+          <ItemText>signal</ItemText>
         </Ww>
         <Ww>
           <count>4</count>
           <WinNumber>1</WinNumber>
-          <ItemText>ADCxValues1</ItemText>
+          <ItemText>freq</ItemText>
         </Ww>
         <Ww>
           <count>5</count>
           <WinNumber>1</WinNumber>
-          <ItemText>signal</ItemText>
+          <ItemText>DMA1_Stream1-&gt;CR </ItemText>
         </Ww>
         <Ww>
           <count>6</count>
           <WinNumber>1</WinNumber>
-          <ItemText>freq</ItemText>
+          <ItemText>DMA1_Stream1-&gt;FCR</ItemText>
         </Ww>
         <Ww>
           <count>7</count>
           <WinNumber>1</WinNumber>
-          <ItemText>DMA1_Stream1-&gt;CR </ItemText>
+          <ItemText>DMA1_Stream1-&gt;PAR</ItemText>
         </Ww>
         <Ww>
           <count>8</count>
           <WinNumber>1</WinNumber>
-          <ItemText>DMA1_Stream1-&gt;FCR</ItemText>
+          <ItemText>DMA1_Stream1-&gt;M0AR</ItemText>
         </Ww>
         <Ww>
           <count>9</count>
           <WinNumber>1</WinNumber>
-          <ItemText>DMA1_Stream1-&gt;PAR</ItemText>
+          <ItemText>DMA1_Stream1-&gt;M1AR</ItemText>
         </Ww>
         <Ww>
           <count>10</count>
           <WinNumber>1</WinNumber>
-          <ItemText>DMA1_Stream1-&gt;M0AR</ItemText>
+          <ItemText>&amp;ADC1-&gt;DR</ItemText>
         </Ww>
         <Ww>
           <count>11</count>
           <WinNumber>1</WinNumber>
-          <ItemText>DMA1_Stream1-&gt;M1AR</ItemText>
+          <ItemText>DMA1Flag</ItemText>
         </Ww>
         <Ww>
           <count>12</count>
           <WinNumber>1</WinNumber>
-          <ItemText>&amp;ADC1-&gt;DR</ItemText>
+          <ItemText>m</ItemText>
         </Ww>
         <Ww>
           <count>13</count>
           <WinNumber>1</WinNumber>
-          <ItemText>DMA1Flag</ItemText>
+          <ItemText>j</ItemText>
         </Ww>
         <Ww>
           <count>14</count>
           <WinNumber>1</WinNumber>
-          <ItemText>m</ItemText>
+          <ItemText>ip</ItemText>
         </Ww>
         <Ww>
           <count>15</count>
           <WinNumber>1</WinNumber>
-          <ItemText>j</ItemText>
+          <ItemText>signal</ItemText>
         </Ww>
         <Ww>
           <count>16</count>
           <WinNumber>1</WinNumber>
-          <ItemText>ip</ItemText>
+          <ItemText>freq</ItemText>
         </Ww>
         <Ww>
           <count>17</count>
           <WinNumber>1</WinNumber>
-          <ItemText>signal</ItemText>
+          <ItemText>z</ItemText>
         </Ww>
         <Ww>
           <count>18</count>
           <WinNumber>1</WinNumber>
-          <ItemText>freq</ItemText>
+          <ItemText>Fire</ItemText>
         </Ww>
         <Ww>
           <count>19</count>
           <WinNumber>1</WinNumber>
-          <ItemText>z</ItemText>
+          <ItemText>ADCxValues0</ItemText>
         </Ww>
         <Ww>
           <count>20</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Fire</ItemText>
+          <ItemText>ADCxValues1</ItemText>
+        </Ww>
+        <Ww>
+          <count>21</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>Fire_Flag</ItemText>
+        </Ww>
+        <Ww>
+          <count>22</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>SampleCount</ItemText>
         </Ww>
       </WatchWindow1>
       <MemoryWindow1>
         <Mm>
           <WinNumber>1</WinNumber>
           <SubType>0</SubType>
-          <ItemText>0x24001124 </ItemText>
+          <ItemText>0x24000f24</ItemText>
           <AccSizeX>0</AccSizeX>
         </Mm>
       </MemoryWindow1>

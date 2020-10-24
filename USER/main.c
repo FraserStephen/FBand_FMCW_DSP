@@ -51,7 +51,6 @@ int main(void)
   
 	while(1)
 	{
-		Fire = 0;
 		Get_DMAValue(signal);
 		FFT(signal, freq);
 		CFAR(freq);

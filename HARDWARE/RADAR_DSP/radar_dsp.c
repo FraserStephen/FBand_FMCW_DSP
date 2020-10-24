@@ -5,8 +5,10 @@
 
 #define PI 3.14159
 
-
+uint16_t SampleCount = 0;              //Count the number ADC sample
 uint16_t Fire = 0;
+uint16_t Fire_Flag = 0;             //Flag to Fire on
+uint16_t Fire_Clear = Fire_Hold;  	//Flag to clear fire
 
 
 struct compx EE(struct compx a, struct compx b)
@@ -92,9 +94,34 @@ int CFAR(float * s){
 	for(i=Down_Range;i<Up_Range;i++){
 		if( s[i] > z[i-Half_R]) 
 		{
-			Fire = 1;
+			Fire_Flag += 1;
+			break;
 		}
 	}
+	
+	
+	if(SampleCount < Sample_Number){
+		SampleCount += 1;
+	}
+	else{
+		if(Fire_Flag >= Fire_Hold) Fire = 1;
+		else											 Fire = 0;
+		SampleCount = 0;
+		Fire_Flag = 0;
+	}
+	
+	
+	
+/*	if(Fire_Flag >= Fire_Hold){
+		Fire = 1; 
+		Fire_Flag = 0; //Clear Fire_Flag
+	}
+	else{
+		Fire = 0;
+	}	
+*/
+	
+	
 	
 	return 1;
 }
