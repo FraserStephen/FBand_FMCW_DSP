@@ -26,6 +26,8 @@
 	float temp;
 	struct compx signal0[FFT_N]; //size euqal to dsize/2 and FFT_N
 	struct compx signal1[FFT_N]; //size euqal to dsize/2 and FFT_N
+	struct compx signal2[FFT_N]; //size euqal to dsize/2 and FFT_N
+	struct compx signal3[FFT_N]; //size euqal to dsize/2 and FFT_N
 	float freq[FFT_N];
 	extern uint32_t DMA1Flag;
 	extern uint16_t Fire;
@@ -52,7 +54,7 @@ int main(void)
   
 	while(1)
 	{
-		Get_DMAValue(signal0, signal1);
+		Get_DMAValue(signal0, signal1, signal2, signal3);
 		FFT(signal0, freq);
 		CFAR(freq);
 		if(Fire){
