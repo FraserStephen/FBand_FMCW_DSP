@@ -24,7 +24,8 @@
 /*************************************************************/
 
 	float temp;
-	struct compx signal[FFT_N]; //size euqal to dsize/2 and FFT_N
+	struct compx signal0[FFT_N]; //size euqal to dsize/2 and FFT_N
+	struct compx signal1[FFT_N]; //size euqal to dsize/2 and FFT_N
 	float freq[FFT_N];
 	extern uint32_t DMA1Flag;
 	extern uint16_t Fire;
@@ -46,13 +47,13 @@ int main(void)
 
 	PLL2_Init();
 	DMA_Init();
-	ADC_Init();					//初始化ADC1通道--PC0引脚，对应ADC1的CH10通道，更多引脚信息，请参考数据手册
+	ADC_Init();					//初始化ADC1通道--PC0引脚，对应ADC1的CH10通2道，更多引脚信息，请参考数据手册
 	
   
 	while(1)
 	{
-		Get_DMAValue(signal);
-		FFT(signal, freq);
+		Get_DMAValue(signal0, signal1);
+		FFT(signal0, freq);
 		CFAR(freq);
 		if(Fire){
 			Fire_On;
