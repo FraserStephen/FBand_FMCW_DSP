@@ -118,7 +118,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGUARM</Key>
-          <Name>梏?</Name>
+          <Name></Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -155,9 +155,9 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>59</LineNumber>
+          <LineNumber>66</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>135274268</Address>
+          <Address>134225896</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -166,7 +166,23 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>.\main.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\ADC\main.c\59</Expression>
+          <Expression>\\ADC\main.c\66</Expression>
+        </Bp>
+        <Bp>
+          <Number>1</Number>
+          <Type>0</Type>
+          <LineNumber>66</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134225950</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>.\main.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\ADC\main.c\66</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
@@ -193,125 +209,100 @@
         <Ww>
           <count>4</count>
           <WinNumber>1</WinNumber>
-          <ItemText>DMA1_Stream0-&gt;CR </ItemText>
+          <ItemText>&amp;ADC2-&gt;DR</ItemText>
         </Ww>
         <Ww>
           <count>5</count>
           <WinNumber>1</WinNumber>
-          <ItemText>DMA1_Stream0-&gt;FCR</ItemText>
+          <ItemText>DMAFlag2</ItemText>
         </Ww>
         <Ww>
           <count>6</count>
           <WinNumber>1</WinNumber>
-          <ItemText>DMA1_Stream0-&gt;PAR</ItemText>
+          <ItemText>m</ItemText>
         </Ww>
         <Ww>
           <count>7</count>
           <WinNumber>1</WinNumber>
-          <ItemText>DMA1_Stream0-&gt;M0AR</ItemText>
+          <ItemText>j</ItemText>
         </Ww>
         <Ww>
           <count>8</count>
           <WinNumber>1</WinNumber>
-          <ItemText>DMA1_Stream0-&gt;M1AR</ItemText>
+          <ItemText>ip</ItemText>
         </Ww>
         <Ww>
           <count>9</count>
           <WinNumber>1</WinNumber>
-          <ItemText>&amp;ADC2-&gt;DR</ItemText>
+          <ItemText>freq</ItemText>
         </Ww>
         <Ww>
           <count>10</count>
           <WinNumber>1</WinNumber>
-          <ItemText>DMAFlag2</ItemText>
+          <ItemText>z</ItemText>
         </Ww>
         <Ww>
           <count>11</count>
           <WinNumber>1</WinNumber>
-          <ItemText>m</ItemText>
+          <ItemText>Fire</ItemText>
         </Ww>
         <Ww>
           <count>12</count>
           <WinNumber>1</WinNumber>
-          <ItemText>j</ItemText>
+          <ItemText>Fire_Flag</ItemText>
         </Ww>
         <Ww>
           <count>13</count>
           <WinNumber>1</WinNumber>
-          <ItemText>ip</ItemText>
+          <ItemText>SampleCount</ItemText>
         </Ww>
         <Ww>
           <count>14</count>
           <WinNumber>1</WinNumber>
-          <ItemText>freq</ItemText>
+          <ItemText>signal0</ItemText>
         </Ww>
         <Ww>
           <count>15</count>
           <WinNumber>1</WinNumber>
-          <ItemText>z</ItemText>
+          <ItemText>signal1</ItemText>
         </Ww>
         <Ww>
           <count>16</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Fire</ItemText>
+          <ItemText>ADC1Values0</ItemText>
         </Ww>
         <Ww>
           <count>17</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Fire_Flag</ItemText>
+          <ItemText>ADC1Values1</ItemText>
         </Ww>
         <Ww>
           <count>18</count>
           <WinNumber>1</WinNumber>
-          <ItemText>SampleCount</ItemText>
+          <ItemText>ADC2Values0</ItemText>
         </Ww>
         <Ww>
           <count>19</count>
           <WinNumber>1</WinNumber>
-          <ItemText>signal0</ItemText>
+          <ItemText>ADC2Values1</ItemText>
         </Ww>
         <Ww>
           <count>20</count>
           <WinNumber>1</WinNumber>
-          <ItemText>signal1</ItemText>
+          <ItemText>signal0[10].real</ItemText>
         </Ww>
         <Ww>
           <count>21</count>
           <WinNumber>1</WinNumber>
-          <ItemText>ADC1Values0</ItemText>
+          <ItemText>signal1[10].real</ItemText>
         </Ww>
         <Ww>
           <count>22</count>
           <WinNumber>1</WinNumber>
-          <ItemText>ADC1Values1</ItemText>
-        </Ww>
-        <Ww>
-          <count>23</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>ADC2Values0</ItemText>
-        </Ww>
-        <Ww>
-          <count>24</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>ADC2Values1</ItemText>
-        </Ww>
-        <Ww>
-          <count>25</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>signal0[10].real</ItemText>
-        </Ww>
-        <Ww>
-          <count>26</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>signal1[10].real</ItemText>
-        </Ww>
-        <Ww>
-          <count>27</count>
-          <WinNumber>1</WinNumber>
           <ItemText>signal2[10].real</ItemText>
         </Ww>
         <Ww>
-          <count>28</count>
+          <count>23</count>
           <WinNumber>1</WinNumber>
           <ItemText>signal3[10].real</ItemText>
         </Ww>

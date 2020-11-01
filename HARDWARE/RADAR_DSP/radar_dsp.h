@@ -29,7 +29,7 @@ struct compx {float real, imag;};
 
 struct compx EE(struct compx a, struct compx b);
 
-void Get_DMAValue(struct compx * signal);
+void Get_DMAValue(struct compx * signal0, struct compx * signal1, struct compx * signal2, struct compx * signal3);
 
 void FFT(struct compx * xin, float* freq); 				//
 int CFAR(float * s);

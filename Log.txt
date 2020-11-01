@@ -1,1 +1,4 @@
 2020-10-24  修改了Fire信号的判决依据：取连续十帧信号，其中有5帧检出反射峰，即判断反射体存在，以降低误判概率。
+2020-10-27  增加了ADC多通道采样， ADC1 Channel10 ---PC0  ADC1 Channel11----PC1 ADC2 Channel18----PA4  ADC2 Channel19 ----- PA5
+2020-11-1   修改了ADC引脚对应关系（远离晶振）  ADC1 Channel 4 ---PC4  ADC1 Channel 8----PC5 ADC2 Channel 9----PB0  ADC2 Channel 5 ----- PB1
+            修改输出信号引脚（远离晶振）      Fire -- PA10     Debug_LED -- PA9
