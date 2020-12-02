@@ -6,7 +6,7 @@
 #define PI 3.14159
 
 uint16_t SampleCount = 0;              //Count the number ADC sample
-uint16_t Fire = 0;
+
 uint16_t Fire_Flag = 0;             //Flag to Fire on
 uint16_t Fire_Clear = Fire_Hold;  	//Flag to clear fire
 
@@ -82,6 +82,7 @@ void FFT(struct compx *xin, float* freq){
 int CFAR(float * s){
 	
 	float z[L_num];
+	int Fire;
 	
 	int i = 0; int j = 0;
 	s[0] = 0;
@@ -110,8 +111,6 @@ int CFAR(float * s){
 		Fire_Flag = 0;
 	}
 	
-	
-	
 /*	if(Fire_Flag >= Fire_Hold){
 		Fire = 1; 
 		Fire_Flag = 0; //Clear Fire_Flag
@@ -121,9 +120,7 @@ int CFAR(float * s){
 	}	
 */
 	
-	
-	
-	return 1;
+	return Fire;
 }
 		
 		

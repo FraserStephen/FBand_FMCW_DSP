@@ -9,11 +9,11 @@
 //ADC Driver code
 //Set GPIO pin to ADC sample with DMA
 
-//PC0 ---- ADC1 Channel 10 ---- DMA1_Stream0
-//PC1 ---- ADC1 Channel 11 ---- DMA1_Stream0
+//PC4 ---- ADC1 Channel 4 ---- DMA1_Stream0
+//PC5 ---- ADC1 Channel 8 ---- DMA1_Stream0
 
-//PA4 ---- ADC2 Channel 18 ---- DMA1_Stream1
-//PA5 ---- ADC2 Channel 19 ---- DMA1_Stream1
+//PB0 ---- ADC2 Channel 9 ---- DMA1_Stream1
+//PB1 ---- ADC2 Channel 5 ---- DMA1_Stream1
 
 /******************************************************************************/							  
 ////////////////////////////////////////////////////////////////////////////////// 	
@@ -259,7 +259,7 @@ void DMA_Init(void)
 		
 		
 		//////////////////////// Open DMA1_Stream2 for ADC2   //////////////////////////////	
-		DmaHandle2.Instance = DMA1_Stream2;  //Select DMA stream 1 for ADC1
+		DmaHandle2.Instance = DMA1_Stream2;  //Select DMA stream 1 for ADC2
 		DmaHandle2.Init.Request = DMA_REQUEST_ADC2;  //Ask for ADC1
 		DmaHandle2.Init.Direction = DMA_PERIPH_TO_MEMORY; 
 		DmaHandle2.Init.PeriphInc = DMA_PINC_DISABLE;

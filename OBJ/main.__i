@@ -1,0 +1,6 @@
+-c --cpu Cortex-M7.fp.dp -D__EVAL -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I ..\CORE -I ..\USER -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HALLIB\STM32H7xx_HAL_Driver\Inc -I ..\USMART -I ..\HARDWARE\LED -I ..\HARDWARE\KEY -I ..\HARDWARE\TIMER -I ..\HARDWARE\MPU -I ..\HARDWARE\WKUP -I ..\HARDWARE\ADC -I ..\HARDWARE\LCD200H -I ..\HARDWARE\GBK_LibDrive -I ..\HARDWARE\SPI -I ..\HARDWARE\RADAR_DSP
+-I.\RTE\_ADC
+-IC:\Keil_v5\ARM\PACK\Keil\STM32H7xx_DFP\2.3.1\Drivers\CMSIS\Device\ST\STM32H7xx\Include
+-IC:\Keil_v5\ARM\CMSIS\Include
+-D__UVISION_VERSION="523" -DSTM32H743xx -DUSE_HAL_DRIVER -DSTM32H743xx
+-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d "main.c"

@@ -28,10 +28,14 @@
 	struct compx signal1[FFT_N]; //size euqal to dsize/2 and FFT_N
 	struct compx signal2[FFT_N]; //size euqal to dsize/2 and FFT_N
 	struct compx signal3[FFT_N]; //size euqal to dsize/2 and FFT_N
-	float freq[FFT_N];
+	float freq0[FFT_N];
+	float freq1[FFT_N];
+	float freq2[FFT_N];
+	float freq3[FFT_N];	
 	extern uint32_t DMA1Flag;
-	extern uint16_t Fire;
 	
+	int Fire0; int Fire1; int Fire2; int Fire3;
+	int Fire;
 
 	
 int main(void)
@@ -55,9 +59,14 @@ int main(void)
 	while(1)
 	{
 		Get_DMAValue(signal0, signal1, signal2, signal3);
-		FFT(signal0, freq);
-		CFAR(freq);
-		if(Fire){
+		FFT(signal0, freq0); FFT(signal1, freq1);
+		FFT(signal2, freq2); FFT(signal3, freq3);
+		Fire0 = CFAR(freq0);
+		Fire1 = CFAR(freq1);
+		Fire2 = CFAR(freq2);
+		Fire3 = CFAR(freq3);
+		Fire = Fire0 + Fire1 + Fire3 + Fire3;
+		if(Fire > 2){
 			Fire_On;
 		}
 		else {
