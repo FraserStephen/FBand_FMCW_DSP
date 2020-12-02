@@ -382,6 +382,7 @@ void DMA1_Stream2_IRQHandler(void)
 void ADC_Cha_Config(void)
 {
 	// Channel 10 for ADC1
+	/*
 	ADC1_ChanConf.Channel = ADC_CHANNEL_4; //PC4
 	ADC1_ChanConf.Rank = ADC_REGULAR_RANK_1;
 	ADC1_ChanConf.SamplingTime = ADC_SAMPLETIME_32CYCLES_5;  //Sampling time 32.5 time cycles
@@ -405,6 +406,7 @@ void ADC_Cha_Config(void)
 	
 	HAL_ADC_ConfigChannel(&ADC1_Handler, &ADC1_ChanConf);
 	
+	*/
 	
 	// Channel 18 for ADC2
 	ADC2_ChanConf.Channel = ADC_CHANNEL_9; //PB0
@@ -418,7 +420,7 @@ void ADC_Cha_Config(void)
 	
 	HAL_ADC_ConfigChannel(&ADC2_Handler, &ADC2_ChanConf);
 	
-	
+	/*
 	// Channel 19 for ADC2
 	ADC2_ChanConf.Channel = ADC_CHANNEL_5; //PB1
 	ADC2_ChanConf.Rank = ADC_REGULAR_RANK_2;
@@ -430,6 +432,7 @@ void ADC_Cha_Config(void)
 	ADC2_ChanConf.OffsetSignedSaturation = DISABLE;
 	
 	HAL_ADC_ConfigChannel(&ADC2_Handler, &ADC2_ChanConf);
+	*/
 }
 
 
@@ -437,7 +440,7 @@ void ADC_Init(void)
 { 
 	 __HAL_RCC_ADC12_CLK_ENABLE();
 	
-	
+	/*
 	/////////////////////  ADC1 Init   /////////////////////  
 	ADC1_Handler.Instance=ADC1;
 	//ADC1_Handler.Init.ClockPrescaler=ADC_CLOCK_SYNC_PCLK_DIV4; 	//4分频，ADCCLK=PER_CK/4=200/4=50MHZ
@@ -452,7 +455,7 @@ void ADC_Init(void)
 	ADC1_Handler.Init.ContinuousConvMode=ENABLE;               //Open Continuous Convert
 	ADC1_Handler.Init.DiscontinuousConvMode=DISABLE;            //禁止不连续采样模式
 	ADC1_Handler.Init.NbrOfDiscConversion=1;                    //不连续采样通道数为0
-	ADC1_Handler.Init.NbrOfConversion = 2;                    /* 2 Channle for sample*/
+	ADC1_Handler.Init.NbrOfConversion = 2;                    // 2 Channle for sample
 	ADC1_Handler.Init.ExternalTrigConv=ADC_SOFTWARE_START;      //软件触发
 	ADC1_Handler.Init.ExternalTrigConvEdge=ADC_EXTERNALTRIGCONVEDGE_NONE;//使用软件触发
 	ADC1_Handler.Init.BoostMode=ENABLE;							                     //Clock faster than 20MHz
@@ -462,7 +465,7 @@ void ADC_Init(void)
 
 	HAL_ADC_Init(&ADC1_Handler);                                      //初始化 	
 	HAL_ADCEx_Calibration_Start(&ADC1_Handler,ADC_CALIB_OFFSET,ADC_SINGLE_ENDED); //ADC校准
-	
+	*/
 
 	
 	
@@ -483,7 +486,7 @@ void ADC_Init(void)
 	ADC2_Handler.Init.NbrOfConversion=1;                        //1个转换在规则序列中 也就是只转换规则序列1 
 	ADC2_Handler.Init.DiscontinuousConvMode=DISABLE;            //禁止不连续采样模式
 	ADC2_Handler.Init.NbrOfDiscConversion=0;                    //不连续采样通道数为0
-	ADC2_Handler.Init.NbrOfConversion = 2;                    /* 2 Channle for sample*/
+	ADC2_Handler.Init.NbrOfConversion = 1;                    /* 2 Channle for sample*/
 	ADC2_Handler.Init.ExternalTrigConv=ADC_SOFTWARE_START;      //软件触发
 	ADC2_Handler.Init.ExternalTrigConvEdge=ADC_EXTERNALTRIGCONVEDGE_NONE;//使用软件触发
 	ADC2_Handler.Init.BoostMode=ENABLE;							                     
@@ -497,15 +500,18 @@ void ADC_Init(void)
 	
 	ADC_Cha_Config(); // ADC Channle config
 	
+	/*
 	HAL_ADC_Start(&ADC1_Handler);                               //开启ADC1
 	HAL_ADC_PollForConversion(&ADC1_Handler,10);                //轮询转换
+	*/
 	
 	HAL_ADC_Start(&ADC2_Handler);                               //开启ADC2
 	HAL_ADC_PollForConversion(&ADC2_Handler,10);                //轮询转换
 	
-	
+	/*
 	DMA1_Stream1->CR |= (1<<4); //Enabble DMA tranfer complete IRQ
 	DMA1_Stream1->CR |= (1<<0); //Enable DMA Stream1
+	*/
 	DMA1_Stream2->CR |= (1<<4); //Enabble DMA tranfer complete IRQ
 	DMA1_Stream2->CR |= (1<<0); //Enable DMA Stream2
 	
@@ -550,6 +556,7 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* hadc)
 void Get_DMAValue(struct compx * signal0, struct compx * signal1, struct compx * signal2, struct compx * signal3)
 {	
 		int i = 0;
+	/*
 		//ADC1 data trans
 		//If first part of buff is acessable
 	 if(DMAFlag1 == 1)
@@ -576,6 +583,7 @@ void Get_DMAValue(struct compx * signal0, struct compx * signal1, struct compx *
 			}
       //ENABLE_INT();	
 	 }
+	 */
 	 
 	 //ADC2 data trans
 	 //If first part of buff is acessable
@@ -583,11 +591,8 @@ void Get_DMAValue(struct compx * signal0, struct compx * signal1, struct compx *
 	 {
 			//DISABLE_INT();
 		 for(i=0;i<FFT_N;i++){
-				signal2[i].real = ADC2Values0[2*i]*3.3/65536;
+				signal2[i].real = ADC2Values0[i]*3.3/65536;
 				signal2[i].imag = 0;
-			 
-			 	signal3[i].real = ADC2Values0[2*i+1]*3.3/65536;
-				signal3[i].imag = 0;
 		 }
       //ENABLE_INT();
 	 }
@@ -595,11 +600,8 @@ void Get_DMAValue(struct compx * signal0, struct compx * signal1, struct compx *
 	 {
 			//DISABLE_INT();
       for(i=0;i<FFT_N;i++){
-				signal2[i].real = ADC2Values1[2*i]*3.3/65536;
+				signal2[i].real = ADC2Values1[i]*3.3/65536;
 				signal2[i].imag = 0;
-				
-				signal3[i].real = ADC2Values1[2*i+1]*3.3/65536;
-				signal3[i].imag = 0;
 			}
       //ENABLE_INT();	
 	 }

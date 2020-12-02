@@ -7,8 +7,8 @@
 #define LED2(n)		   (n?HAL_GPIO_WritePin(GPIOA,GPIO_PIN_1,GPIO_PIN_SET):HAL_GPIO_WritePin(GPIOA,GPIO_PIN_1,GPIO_PIN_RESET))
 #define LED2_Toggle (HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_1))                                    //LED1输出电平翻转
 #define PA0Toggle (HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_0))                                    //debug pin输出电平翻转
-#define Fire_On  	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,GPIO_PIN_SET)                            //PA4 Set
-#define Fire_Clear HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,GPIO_PIN_RESET)													//PA4 Reset
+#define Fire_On  	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_1,GPIO_PIN_SET)                            //PA1 Set
+#define Fire_Clear HAL_GPIO_WritePin(GPIOA,GPIO_PIN_1,GPIO_PIN_RESET)													//PA1 Reset
 
 void LED_Init(void); //LED初始化函数
 

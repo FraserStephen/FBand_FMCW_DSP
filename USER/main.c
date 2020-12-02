@@ -33,8 +33,7 @@
 	float freq2[FFT_N];
 	float freq3[FFT_N];	
 	extern uint32_t DMA1Flag;
-	
-	int Fire0; int Fire1; int Fire2; int Fire3;
+
 	int Fire;
 
 	
@@ -59,14 +58,9 @@ int main(void)
 	while(1)
 	{
 		Get_DMAValue(signal0, signal1, signal2, signal3);
-		FFT(signal0, freq0); FFT(signal1, freq1);
-		FFT(signal2, freq2); FFT(signal3, freq3);
-		Fire0 = CFAR(freq0);
-		Fire1 = CFAR(freq1);
-		Fire2 = CFAR(freq2);
-		Fire3 = CFAR(freq3);
-		Fire = Fire0 + Fire1 + Fire3 + Fire3;
-		if(Fire > 2){
+		FFT(signal2, freq2); 
+		CFAR(freq2);
+		if(Fire >= 1){
 			Fire_On;
 		}
 		else {
@@ -78,7 +72,7 @@ int main(void)
 }
 
 
-
+//save C:\Users\WeiHaoLi\Desktop\F_DSP\DataSample\Py_ADCPro\data.txt 0x38000880, 0x38000C80
 
 
 

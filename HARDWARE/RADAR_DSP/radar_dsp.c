@@ -10,6 +10,8 @@ uint16_t SampleCount = 0;              //Count the number ADC sample
 uint16_t Fire_Flag = 0;             //Flag to Fire on
 uint16_t Fire_Clear = Fire_Hold;  	//Flag to clear fire
 
+extern int Fire;
+
 
 struct compx EE(struct compx a, struct compx b)
 {
@@ -82,7 +84,6 @@ void FFT(struct compx *xin, float* freq){
 int CFAR(float * s){
 	
 	float z[L_num];
-	int Fire;
 	
 	int i = 0; int j = 0;
 	s[0] = 0;
@@ -120,7 +121,7 @@ int CFAR(float * s){
 	}	
 */
 	
-	return Fire;
+	return 1;
 }
 		
 		
